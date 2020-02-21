@@ -2,6 +2,7 @@
 
 ### SonarQube scanner for Javascript projects.
 ### It assumes you're using ESLint and Jest.
+### Your user token must be stored in the SONAR_TOKEN environment variable.
 
 # Install Sonar scanner
 wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip -P /tmp
@@ -20,4 +21,4 @@ jest --coverage
 
 # Run scanner
 cd -P . || true # Needed because CodeShip stores the code using a symbolic link that gives problems to the scanner
-sonar-scanner
+sonar-scanner -Dsonar.login="$SONAR_TOKEN"
