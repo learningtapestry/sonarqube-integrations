@@ -17,7 +17,7 @@ sed -i 's|#sonar.host.url=http://localhost:9000|sonar.host.url=https://sonarqube
 bundle exec rubocop --format=json --out=rubocop-report.json || true
 
 # Generate test coverage report
-bundle exec rake test || bundle exec rake spec
+bundle exec rake test || bundle exec rspec
 
 # Run scanner
 cd -P . || true # Needed because CodeShip stores the code using a symbolic link that gives problems to the scanner
